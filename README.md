@@ -1,4 +1,4 @@
-# SQ APP FOR INTERNAL is rewritten in Angular6 and Bootstrap 4
+# SQ APP FOR INTERNAL is rewritten in Angular6 and Bootstrap 
 
 Simple Dashboard Admin App built using Angular 6 and Bootstrap 4
 
@@ -22,6 +22,26 @@ There are 3 layouts at the backend: the Dashboard, Overbooked Flights and Passen
 
 ### Passenger
 ‘Passenger’ digest details of each selected target offload passengers, showing the 4 factors the machine learning system consider to prioritize the passengers, namely check-in status, freedom of traffic, KrisFlyer membership tier and previous record of offloading. The offer confirmation of each passenger is shown in one sight, the analysts receive real time result of offering sending out and result of acceptance.
+
+## Machine Learning
+
+
+### System Introduction
+Machine learning is an advanced statistical problem solving skills to deliver solutions through data. THINK TANK built a machine learning model to analyze passengers information provided by SQ API.
+
+### Platform
+We use json reader and pandas library in Python programming language on Jupyter notebook
+
+### Tasks
+To derive an offloading score to each passenger in an overbooked flights. Our Think Tank Flight Offloading Monitoring System (FOMS) sends email to potential offloading passengers based on the score. We hope to notify as little passengers as we can and reach the offloading target at the same time. 
+
+### Code Explain 
+Based on the API given by SQ, the factors to derive the score are Check In Status, Itinerary, Kris Flyer Type and offloading history. We created dummy variable to read “Check In Status” column and separate passengers’ itinerary into 34th Freedom and 6th Freedom. We also reference to SQ Kris Flyer program to segment passengers into different tiers. “No Check In”, “34Freedom”, “Basic Member” and “No Offloading History” passengers get the highest score in the system.
+
+### End Result
+The machine learning model will export a CSV for SQ analysts to confirm the priority email list. Analysts confirm and email to target passengers through FOMS. 
+
+
 
 ## Demo
 https://youtu.be/7NMZxP0t4Jc
