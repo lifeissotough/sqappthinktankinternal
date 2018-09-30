@@ -1,0 +1,100 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <label for="typeahead-basic">Check Flight Passenger List</label>
+            <input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" />
+            <hr>
+            <pre>Model: {{ model | json }}</pre>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="w-100 border table table-hover">
+                <tr>
+                    <th>Flight Date</th>
+                    <th>Flight No.</th>
+                    <th>ORGIN</th>
+                    <th>DEST</th>
+                    <th>J Class <br> Overbookings</th>
+                    <th>Y Class <br> Overbookings</th>
+                    <th>Total <br> Overbookings</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+
+                    <td>2018-07-20</td>
+                    <td>SQ352</td>
+                    <td>SIN </td>
+                    <td>CPH</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>7</td>
+                    <td>
+                        <button type="button" class="btn btn-primary">
+                            Expand
+                            <i class="ml-2 fa fa-chevron-circle-down"></i>
+                        </button>
+                    </td>
+                </tr>
+                <br>
+                <tr>
+                    <td colspan="8" class="">
+                        <table class="w-100 border table table-hover">
+                            <thead class="thead-dark">
+                                <th>Itinerary</th>
+                                <th>Freedom</th>
+                                <th>Title</th>
+                                <th>Last Name</th>
+                                <th>First Name</th>
+                                <th>Booking Reference</th>
+                                <th>KTier</th>
+                                <th>KFNumber</th>
+                                <th>Check In Status</th>
+                                <th>Status Created Time</th>
+                                <th>Status</th>
+                            </thead>
+                            <tr>
+            
+                                <td>SIN-CPH</td>
+                                <td>34F</td>
+                                <td>Mr.</td>
+                                <td>Faith</td>
+                                <td>Chan</td>
+                                <td>KDIASB</td>
+                                <td>KFLY</td>
+                                <td>3039495945</td>
+                                <td>NOT CHECKED IN</td>
+                                <td>18th Jul 2018 17:32:04 GMT+8</td>
+                                <td>
+                                    <button type="button" class="btn btn-secondary">
+                                        Pending
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>SIN-CPH</td>
+                                <td>34F</td>
+                                <td>Mr.</td>
+                                <td>Faith</td>
+                                <td>Chan</td>
+                                <td>KDIASB</td>
+                                <td>KFLY</td>
+                                <td>3039495945</td>
+                                <td>NOT CHECKED IN</td>
+                                <td>19th Jul 2018 09:18:23 GMT+8</td>
+                                <td>
+                                    <button type="button" class="btn btn-success">
+                                        Accept
+                                    </button>
+                                </td>
+                            </tr>
+            
+                        </table>
+                    </td>
+
+                </tr>
+
+            </table>
+        </div>
+    </div>
+</div>
