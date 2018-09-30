@@ -6,27 +6,27 @@ This project is a port of the famous Free Admin Bootstrap Theme [SB Admin v6.0](
 
 Powered by [StartAngular](http://startangular.com/) & [StrapUI](http://strapui.com/)
 
-##[Introduction]
+## Introduction
 
 JUST FULL aims to leverage on choosing passengers who view being bumped as a ticket to perks. Using the technology of streamlining and automating the current offloading process, the app scores and prioritize passengers according to their willingness to be voluntary offloaded. Since the search for volunteers will be completed before the departure date of the flights, airport staff will be able to provide a more efficient service, while passengers can enjoy a seamless experience flying SQ.
 
-###Tabs Explain
+### Tabs Explain
 There are 3 layouts at the backend: the Dashboard, Overbooked Flights and Passengers.
 
-###Dashboard
+### Dashboard
 
 ‘Dashboard’ is designed to illustrate offloading performance, in terms of year to month and monthly. Breakdown provides a further drill on amount of overbooking in each sector, the trend of compensation amount, these information can be retrieved from ‘View Breakdown’.
 
-###Overbooked Flights
+### Overbooked Flights
 ‘Overbooked Flights’ displays upcoming overbooked flights, which are labeled with Red, Yellow and Green, representing the severity of overbooking status, ‘Red’ requires immediate action of revenue analysts. Machine Learning System developed by THINK TANK will recommend a compensation price based of historical trend and rank the priority of passengers who have traits that are commonly found in passengers who are willing to voluntary offload.  
 
-###Passenger
+### Passenger
 ‘Passenger’ digest details of each selected target offload passengers, showing the 4 factors the machine learning system consider to prioritize the passengers, namely check-in status, freedom of traffic, KrisFlyer membership tier and previous record of offloading. The offer confirmation of each passenger is shown in one sight, the analysts receive real time result of offering sending out and result of acceptance.
 
-##[Demo]
+## [Demo]
 
 
-##[Framework]
+## [Framework]
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 
