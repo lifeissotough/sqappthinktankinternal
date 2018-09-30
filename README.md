@@ -10,7 +10,7 @@ Powered by [StartAngular](http://startangular.com/) & [StrapUI](http://strapui.c
 
 JUST FULL aims to leverage on choosing passengers who view being bumped as a ticket to perks. Using the technology of streamlining and automating the current offloading process, the app scores and prioritize passengers according to their willingness to be voluntary offloaded. Since the search for volunteers will be completed before the departure date of the flights, airport staff will be able to provide a more efficient service, while passengers can enjoy a seamless experience flying SQ.
 
-### Tabs Explain
+## Tabs Explain
 There are 3 layouts at the backend: the Dashboard, Overbooked Flights and Passengers.
 
 ### Dashboard
@@ -23,10 +23,10 @@ There are 3 layouts at the backend: the Dashboard, Overbooked Flights and Passen
 ### Passenger
 ‘Passenger’ digest details of each selected target offload passengers, showing the 4 factors the machine learning system consider to prioritize the passengers, namely check-in status, freedom of traffic, KrisFlyer membership tier and previous record of offloading. The offer confirmation of each passenger is shown in one sight, the analysts receive real time result of offering sending out and result of acceptance.
 
-## [Demo]
+## Demo
+https://youtu.be/7NMZxP0t4Jc
 
-
-## [Framework]
+## Framework
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 
