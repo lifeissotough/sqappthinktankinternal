@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="overbookedFlight">
     <div class="row">
         <div class="col">
             <label for="typeahead-basic">Check Flight Passenger List</label>
@@ -9,26 +9,22 @@
     </div>
     <div class="row">
         <div class="col">
-            <table class="w-100 border table table-hover">
+            <table class="w-100 border table table-hover"  >
                 <tr>
                     <th>Flight Date</th>
-                    <th>Flight No.</th>
-                    <th>ORGIN</th>
-                    <th>DEST</th>
-                    <th>J Class <br> Overbookings</th>
-                    <th>Y Class <br> Overbookings</th>
-                    <th>Total <br> Overbookings</th>
+                    <th>Flight No</th>
+                    <th>Sector</th>
+                    <th>J Class <br> Bookings</th>
+                    <th>Y Class <br> Bookings</th>
                     <th>Action</th>
                 </tr>
                 <tr>
 
-                    <td>2018-07-20</td>
-                    <td>SQ352</td>
-                    <td>SIN </td>
-                    <td>CPH</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>7</td>
+                    <td>{{overbookedFlight.flightDate}}</td>
+                    <td>{{overbookedFlight.flightNo}}</td>
+                    <td>{{checkflightOD.sector}} </td>
+                    <td>{{overbookedFlight.loadSummary["businessClassCapacity:"]- overbookedFlight.loadSummary.businessClassBookedLoad}}</td>
+                    <td>{{overbookedFlight.loadSummary["economyClassCapacity:"]- overbookedFlight.loadSummary.economyClassBookedLoad}}</td>
                     <td>
                         <button type="button" class="btn btn-primary">
                             Expand

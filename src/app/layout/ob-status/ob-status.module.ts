@@ -18,4 +18,10 @@ import { OBStatusRoutingModule } from './ob-status-routing.module';
     ],
     declarations:[OBStatusComponent]
 })
-export class OBStatusModule {}
+export class OBStatusModule {
+
+
+    
+
+
+}

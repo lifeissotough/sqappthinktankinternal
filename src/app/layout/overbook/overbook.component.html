@@ -1,12 +1,12 @@
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="overbookedFlight,checkflightOD">
     <h4>Overbooked flight in future 7 days:</h4> <br>
         <div class="row">
                 <div class="col-xl-4 col-sm-6 mb-3">
                   <div class="card text-white bg-danger o-hidden h-100">
                     <div class="card-body">
-                      <h3 class="mr-5"> SQ 352 SIN - CPH
+                      <h3 class="mr-5">  {{overbookedFlight.flightNo}} {{checkflightOD.sector}} 
                       </h3>
-                      <h4 class="mr-5"> Tomorrow 
+                      <h4 class="mr-5"> {{overbookedFlight.flightDate}}
                       </h4>
                     </div>
                     <a class="card-footer text-white clearfix small z-1" href="#">
@@ -23,9 +23,9 @@
                 <div class="col-xl-4 col-sm-6 mb-3">
                         <div class="card text-white bg-warning o-hidden h-100">
                           <div class="card-body">
-                            <h3 class="mr-5"> SQ 352 SIN - CPH
+                            <h3 class="mr-5">  {{overbookedFlight.flightNo}} {{checkflightOD.sector}} 
                             </h3>
-                            <h4 class="mr-5"> 27 Jul 2018 
+                            <h4 class="mr-5"> 2018-07-27
                             </h4>
                           </div>
                           <a class="card-footer text-white clearfix small z-1" href="#">
@@ -63,9 +63,10 @@
     <div class="row">
         <div class="col">
             <label for="typeahead-basic">Or enter flight no to check loadings:</label>
-            <input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" />
+            <input id="typeahead-basic" type="text" class="form-control" />
+
             <hr>
-            <pre>Model: {{ model | json }}</pre>
+            <pre> </pre>
         </div>
     </div>
 
@@ -75,26 +76,22 @@
 
     <div class="row">
         <div class="col">
-            <table class="w-100 border table">
+            <table class="w-100 border table" *ngIf="overbookedFlight,checkflightOD" >
                 <tr>
                         <th>Flight Date</th>
                         <th>Flight No</th>
-                        <th>ORGIN</th>
-                        <th>DEST</th>
-                        <th>J Class <br> Overbookings</th>
-                        <th>Y Class <br> Overbookings</th>
-                        <th>Total <br> Overbookings</th>
+                        <th>Sector</th>
+                        <th>J Class <br> Bookings</th>
+                        <th>Y Class <br> Bookings</th>
                         <th>Action</th>
                 </tr>
                 <tr>
 
-                    <td>2018-07-20</td>
-                    <td>SQ352</td>
-                    <td>SIN </td>
-                    <td>CPH</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>7</td>
+                    <td>{{overbookedFlight.flightDate}}</td>
+                    <td>{{overbookedFlight.flightNo}}</td>
+                    <td>{{checkflightOD.sector}} </td>
+                    <td>{{overbookedFlight.loadSummary["businessClassCapacity:"]- overbookedFlight.loadSummary.businessClassBookedLoad}}</td>
+                    <td>{{overbookedFlight.loadSummary["economyClassCapacity:"]- overbookedFlight.loadSummary.economyClassBookedLoad}}</td>
                     <td>
                         <button type="button" class="btn btn-primary">
                             <i class="fa fa-plus-circle"></i>
@@ -109,7 +106,7 @@
         <div class="col">
             Selected Flight:
             <br/>
-            <button type="button" class="btn btn-primary">SQ352
+            <button type="button" class="btn btn-primary" *ngIf="overbookedFlight,checkflightOD">{{overbookedFlight.flightNo}}
                 <i class="fa fa-times-circle ml-3"></i>
             </button>
         </div>
@@ -117,7 +114,7 @@
     <div class="row pt-5">
         <div class="col">
             <ngb-tabset>
-                <ngb-tab title="SQ352">
+                <ngb-tab >
                     <ng-template ngbTabContent>
                         <ng-container *ngTemplateOutlet="offerDetails"></ng-container>
                     </ng-template>

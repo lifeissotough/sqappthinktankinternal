@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '../../node_modules/@angular/forms';
+import { BackendService } from './shared/services/backendService';
 
 // AoT requires an exported function for factories
 export const createTranslateLoader = (http: HttpClient) => {
@@ -41,7 +42,7 @@ export const createTranslateLoader = (http: HttpClient) => {
         NgbModule.forRoot(),
     ],
     declarations: [AppComponent],
-    providers: [AuthGuard],
+    providers: [AuthGuard,BackendService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
 import {debounceTime, distinctUntilChanged, map} from 'rxjs/operators';
+import { BackendService } from '../../shared/services/backendService';
+//import { readdir } from 'fs';
 
 const states = ['Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'California', 'Colorado',
   'Connecticut', 'Delaware', 'District Of Columbia', 'Federated States Of Micronesia', 'Florida', 'Georgia',
@@ -18,6 +20,11 @@ const states = ['Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'C
 })
 export class OBStatusComponent implements OnInit {
   public model: any;
+  private overbookedFlight: any;
+    private checkflightOD: any;
+    constructor(private backendService: BackendService) {
+    }
+
 
   search = (text$: Observable<string>) =>
     text$.pipe(
@@ -27,6 +34,18 @@ export class OBStatusComponent implements OnInit {
         : states.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
     )
     ngOnInit(){
-        
+      let payload={ "flightNo": "SQ352", "flightDate": "2018-07-20" };
+      let flightnumber = { "flightNo": "SQ352", "flightDate": "2018-07-20" }
+
+
+      this.backendService.getFlightOD(flightnumber).toPromise().then((result:any)=>{
+        this.checkflightOD=result.response;
+        console.log(this.checkflightOD);});
+
+
+      this.backendService.getFlightSummary(payload).toPromise().then((result:any)=>{
+        this.overbookedFlight=result.response;
+        console.log(this.overbookedFlight);});
+
     }
 }
